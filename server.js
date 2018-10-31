@@ -2,7 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 
-import Task from "./api/models/todoListModel";
+import routes from "./src/routes/todoListRoutes";
+import Task from "./src/models/todoListModel";
 
 const port = process.env.PORT || 3002;
 const app = express();
@@ -13,7 +14,6 @@ mongoose.connect("mongodb://localhost/Tododb");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const routes = require("./api/routes/todoListRoutes");
 routes(app);
 
 app.use(function(req, res) {
