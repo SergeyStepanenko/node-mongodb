@@ -12,7 +12,10 @@ const app = express();
 const Task = mongoose.model("Tasks", TaskSchema);
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/Tododb");
+mongoose.connect(
+  "mongodb://localhost/Tododb",
+  { useMongoClient: true }
+);
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,5 +28,3 @@ app.use(function(req, res) {
 });
 
 app.listen(port);
-
-console.log("todo list RESTful API server started on: " + port);
