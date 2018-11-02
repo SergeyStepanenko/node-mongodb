@@ -1,13 +1,15 @@
-import express from "express";
-import cors from "cors";
-import mongoose from "mongoose";
-import bodyParser from "body-parser";
+import * as express from "express";
+import * as cors from "cors";
+import * as mongoose from "mongoose";
+import * as bodyParser from "body-parser";
 
-import routes from "./routes/todoListRoutes";
-import Task from "./models/todoListModel";
+import { default as routes } from "./routes/todoListRoutes";
+import TaskSchema from "./models/todoListModel";
 
 const port = process.env.PORT || 3002;
 const app = express();
+
+const Task = mongoose.model("Tasks", TaskSchema);
 
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/Tododb");

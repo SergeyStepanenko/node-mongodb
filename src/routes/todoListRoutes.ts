@@ -1,4 +1,4 @@
-module.exports = function(app) {
+export default function getRoutes(app) {
   const todoList = require("../controllers/todoListController");
 
   // todoList Routes
@@ -12,4 +12,4 @@ module.exports = function(app) {
     .get(todoList.readTask)
     .put(todoList.updateTask)
     .delete(todoList.deleteTask);
-};
+}

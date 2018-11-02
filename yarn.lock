@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@types/node@^10.12.2":
+  version "10.12.2"
+  resolved "http://frontend-1.youla.cloud.devmail.ru:4873/@types%2fnode/-/node-10.12.2.tgz#d77f9faa027cadad9c912cd47f4f8b07b0fb0864"
+  integrity sha512-53ElVDSnZeFUUFIYzI8WLQ25IhWzb6vbddNp8UHlXQyU0ET2RhV5zg0NfubzU7iNMh5bBXb0htCzfvrSVNgzaQ==
+
 abbrev@1:
   version "1.1.1"
   resolved "http://frontend-1.youla.cloud.devmail.ru:4873/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"

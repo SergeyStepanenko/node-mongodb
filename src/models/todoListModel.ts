@@ -1,8 +1,6 @@
-import mongoose from "mongoose";
+import * as mongoose from "mongoose";
 
-const Schema = mongoose.Schema;
-
-const TaskSchema = new Schema({
+export default new mongoose.Schema({
   name: {
     type: String,
     Required: "Kindly enter the name of the task"
@@ -21,5 +19,3 @@ const TaskSchema = new Schema({
     default: ["pending"]
   }
 });
-
-export default mongoose.model("Tasks", TaskSchema);
