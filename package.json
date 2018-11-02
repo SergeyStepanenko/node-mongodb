@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node --presets env,stage-2 ./src/server.js",
-    "watch": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/server.ts"
+    "start": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -25,9 +24,6 @@
   "homepage": "https://github.com/generalgmt/RESTfulAPITutorial#readme",
   "devDependencies": {
     "@types/node": "^10.12.2",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
     "nodemon": "^1.11.0",
     "ts-node": "^7.0.1"
   },
