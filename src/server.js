@@ -3,8 +3,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 
-import routes from "./src/routes/todoListRoutes";
-import Task from "./src/models/todoListModel";
+import routes from "./routes/todoListRoutes";
+import Task from "./models/todoListModel";
 
 const port = process.env.PORT || 3002;
 const app = express();
