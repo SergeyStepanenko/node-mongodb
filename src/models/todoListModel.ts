@@ -1,9 +1,9 @@
-import * as mongoose from "mongoose";
+import * as mongoose from 'mongoose'
 
 export default new mongoose.Schema({
   name: {
     type: String,
-    Required: "Kindly enter the name of the task"
+    Required: 'Kindly enter the name of the task'
   },
   Created_date: {
     type: Date,
@@ -13,9 +13,9 @@ export default new mongoose.Schema({
     type: [
       {
         type: String,
-        enum: ["pending", "ongoing", "completed"]
+        enum: ['pending', 'ongoing', 'completed']
       }
     ],
-    default: ["pending"]
+    default: ['pending']
   }
-});
+})

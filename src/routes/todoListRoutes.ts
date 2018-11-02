@@ -1,14 +1,14 @@
 export default function useRoutes(app: any) {
-  const todoList = require("../controllers/todoListController");
+  const todoList = require('../controllers/todoListController')
 
   app
-    .route("/tasks")
+    .route('/tasks')
     .get(todoList.listAllTasks)
-    .post(todoList.createTask);
+    .post(todoList.createTask)
 
   app
-    .route("/tasks/:taskId")
+    .route('/tasks/:taskId')
     .get(todoList.readTask)
     .put(todoList.updateTask)
-    .delete(todoList.deleteTask);
+    .delete(todoList.deleteTask)
 }
