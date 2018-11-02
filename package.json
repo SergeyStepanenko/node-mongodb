@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/generalgmt/RESTfulAPITutorial#readme",
   "devDependencies": {
+    "@types/cors": "^2.8.4",
+    "@types/express": "^4.16.0",
+    "@types/mongoose": "^5.3.0",
     "@types/node": "^10.12.2",
     "nodemon": "^1.11.0",
     "ts-node": "^7.0.1"

@@ -1,7 +1,6 @@
-export default function getRoutes(app) {
+export default function useRoutes(app: any) {
   const todoList = require("../controllers/todoListController");
 
-  // todoList Routes
   app
     .route("/tasks")
     .get(todoList.listAllTasks)

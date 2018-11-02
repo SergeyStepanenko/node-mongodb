@@ -1,65 +1,66 @@
 import * as mongoose from "mongoose";
+import { Request, Response } from "express";
 
 const Task = mongoose.model("Tasks");
 
-export function listAllTasks(request, response) {
+export function listAllTasks(req: Request, res: Response) {
   Task.find({}, (error, task) => {
     if (error) {
-      response.send(error);
+      res.send(error);
     }
 
-    response.json(task);
+    res.json(task);
   });
 }
 
-export function createTask(request, response) {
-  const newTask = new Task(request.body);
+export function createTask(req: Request, res: Response) {
+  const newTask = new Task(req.body);
 
   newTask.save((error, task) => {
     if (error) {
-      response.send(error);
+      res.send(error);
     }
 
-    response.json(task);
+    res.json(task);
   });
 }
 
-export function readTask(request, response) {
-  Task.findById(request.params.taskId, function(error, task) {
+export function readTask(req: Request, res: Response) {
+  Task.findById(req.params.taskId, function(error, task) {
     if (error) {
-      response.send(error);
+      res.send(error);
     }
 
-    response.json(task);
+    res.json(task);
   });
 }
 
-export function updateTask(request, response) {
+export function updateTask(req: Request, res: Response) {
   Task.findOneAndUpdate(
-    { _id: request.params.taskId },
-    request.body,
+    { _id: req.params.taskId },
+    req.body,
     { new: true },
     (error, task) => {
       if (error) {
-        response.send(error);
+        res.send(error);
       }
 
-      response.json(task);
+      res.json(task);
     }
   );
 }
 
-export function deleteTask(request, response) {
+export function deleteTask(req: Request, res: Response) {
   Task.remove(
     {
-      _id: request.params.taskId
+      _id: req.params.taskId
     },
-    function(error, task) {
+    (error: any): void => {
       if (error) {
-        response.send(error);
+        res.send(error);
       }
 
-      response.json({ message: "Task successfully deleted" });
+      res.json({ message: "Task successfully deleted" });
     }
   );
 }
